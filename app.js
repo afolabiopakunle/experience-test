@@ -1,11 +1,26 @@
 let submit = document.querySelector('input[type="submit"]');
-let firstname = document.querySelector("firstname");
-let lasttname = document.querySelector("lastname");
-submit.addEventListener('click', addEducation)
+let firstname = document.querySelector("#firstname");
+let lasttname = document.querySelector("#lastname");
+let attach = document.querySelector(".attach");
+
+// var node = document.createElement("LI"); // Create a <li> node
+
+// var textnode = document.createTextNode("Water"); // Create a text node
+// node.appendChild(textnode); // Append the text to <li>
+// document.getElementById("myList").appendChild(node); // Append <li> to <ul> with id="myList"
+
+
+submit.addEventListener('click', addEducation);
 
 function addEducation(event) {
     event.preventDefault();
-
+    let format = `<div class="mt-5">
+    <h4> <span class="firstname">${firstname.value}</span> <span class="lastname">Opakunle</span> </h4>
+    <p class="mb-0 institution">Obafemi Awolowo University</p>
+    <p class="mt-0 pt-0">Grade: <span class="text-muted grade">2:2</span></p>
+    </div>`
+    attach.innerHTML += format
+    console.log(format)
 
 }
 
