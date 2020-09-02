@@ -1,9 +1,11 @@
 let submit = document.querySelector('input[type="submit"]');
-
+let firstname = document.querySelector("firstname");
+let lasttname = document.querySelector("lastname");
 submit.addEventListener('click', addEducation)
 
-function addEducation(e) {
-    e.preventDefault()
+function addEducation(event) {
+    event.preventDefault();
+
 
 }
 
