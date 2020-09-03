@@ -5,29 +5,31 @@ let institution = document.getElementById("institution-name");
 let grade = document.querySelector("#grade");
 let attach = document.querySelector(".attach");
 let form = document.querySelector("form");
+let add = document.querySelector(".add-edu");
 
 submit.addEventListener('click', addEducation);
 
 function addEducation(event) {
     event.preventDefault();
-    let format = `<div class="mt-5">
+    if (lastname.value === '' || firstname.value === "" || institution.value === "" || grade.value === "") {
+        alert("Shine your eyes and fill the form well")
+    } else {
+        let format = `<div class="mt-5">
     <h4> <span class="firstname">${firstname.value}</span> <span class="lastname">${lastname.value}</span> </h4>
     <p class="mb-0 institution">${institution.value}</p>
     <p class="mt-0 pt-0">Grade: <span class="text-muted grade">${grade.value}</span></p>
     </div>`
-    attach.innerHTML += format;
-    firstname.value = ''
-    lastname.value = ''
-    grade.value = ''
-    institution.value = ''
-    form.style.display = "none"
-    attach.innerHTML += `<div class="col-md-4 mt-3">
-    <input value="Add Education" class="form-control btn-primary" id="Add">
-</div>`
+        attach.innerHTML += format;
+        firstname.value = ''
+        lastname.value = ''
+        grade.value = ''
+        institution.value = ''
+        form.style.display = "none";
+        add.classList = "col-md-4 mt-3 add-edu";
+    }
 }
 
-let add = document.querySelector("#Add")
-
 add.addEventListener("click", function () {
-    form.style.display = "block"
+    form.style.display = "block";
+    add.classList = "col-md-4 mt-3 d-none add-edu"
 })
